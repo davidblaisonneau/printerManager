@@ -5,8 +5,9 @@ import tornado.escape
 from tornado.escape import json_encode
 import tornado.ioloop
 import tornado.web
-import relay
+from relay import Relay
 
+port = 8888
 relayList = [
     Relay(14,""),
     Relay(04,""),
@@ -21,7 +22,7 @@ relayList = [
 
 class VersionHandler(tornado.web.RequestHandler):
     def get(self):
-        response = { 'version': '3.5.1',
+        response = { 'version': '0.0.1',
                      'last_build':  date.today().isoformat() }
         self.write(response)
  
@@ -38,5 +39,6 @@ application = tornado.web.Application([
 ])
  
 if __name__ == "__main__":
-    application.listen(8888)
+    application.listen(port)
     tornado.ioloop.IOLoop.instance().start()
+    print("Server started on port {}".format(port))

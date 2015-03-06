@@ -16,6 +16,7 @@ class Relay:
         """Set the relay"""
         self.name = name
         self.pin = pin
+        self.state = self._get_state_()
         
     def _get_state_(self):
         """Get the GPIO state"""
@@ -32,8 +33,11 @@ class Relay:
         else:
             print("Error, '{}' is not a good state".format(state))
 
-    def  __str__(self):
-        return "Relay: GPIO {}[{}}: state {}".format(self.pin, self.name, self._get_state_())
+    def  __repr__(self):
+        return "relay : {'pin': {}, 'name': {}, 'state': {}}".format(
+                self.pin,
+                self.name,
+                self.state)
 
     state = property(_get_state_, _set_state_)
 
