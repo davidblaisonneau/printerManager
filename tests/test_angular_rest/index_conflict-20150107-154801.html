@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="./rest.js"></script>
+    	<script>
+			printers = [ {
+					name : "Prusa i3",
+					ip : "192.168.1.15",
+					key : "097681187FB44245BA4EBBACC171038B",
+					info : {type: 'location', value: 'Armoire - niv3'}
+				}
+			];
+    	</script>
+	</head>
+
+	<body>
+			<!-- <div ng-controller="printerController" ng-init="getStatus()">-->
+			<div ng-controller="printerController" ng-init="printer = 0">
+				<p>The ID is {{printer}}</p>
+				<p>Printer status is {{getStatus()}}</p>
+			</div>
+	</body>
+</html>

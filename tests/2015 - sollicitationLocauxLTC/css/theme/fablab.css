@@ -1,0 +1,291 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: url("../../images/theme_fablab/logo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right top;
+  background-color: #eee;
+  }
+
+.reveal {
+  font-family: "Helvetica 45 Light", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #111;
+  }
+.reveal *{
+	text-align: left;}
+
+::selection {
+  color: white;
+  background: #e7ad52;
+  text-shadow: none; }
+
+
+/*********************************************
+ * Orange list style
+ *********************************************/
+
+.reveal ul
+{
+    display: table;
+}
+
+.reveal ul,
+.reveal ul ul,
+.reveal ul ul ul,
+.reveal ul ul ul ul,
+.reveal ul ul ul ul ul,
+.reveal ul ul ul ul ul ul
+{
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.reveal li{
+    padding-left: 1.5em; 
+}
+
+.reveal li:before,
+.reveal li li:before ,
+.reveal li li li:before ,
+.reveal li li li:before ,
+.reveal li li li li:before ,
+.reveal li li li li li:before 
+{
+    position: absolute;
+    color: #222;
+    left: 0;
+}
+
+.reveal li:before { content: "•"; }
+.reveal li li:before { content: "▪"; }
+.reveal li li li:before { content: "◆"; }
+.reveal li li li li:before { content: "∘"; }
+.reveal li li li li li:before { content: "▫"; }
+.reveal li li li li li li:before { content: "◇"; }
+
+/*********************************************
+ * Centrer un element
+ *********************************************/
+
+.center{
+    text-align:center;
+    margin: auto auto;
+    width: 100%;
+}
+
+/*********************************************
+ * Page de titre
+ *********************************************/
+
+.title{
+
+}
+.reveal .intercalaire h1{
+    font-size: 2.5em;
+}
+.reveal .intercalaire h1:before { content: "‣"; }
+
+/*********************************************
+ * Orange question page style
+ *********************************************/
+
+
+.reveal .question_centree:before{
+    float: left;
+    margin:20px;
+    content: url(../../images/theme_fablab/the-question-mark.png);
+}
+.reveal .question_centree{
+    text-align:center;
+    line-height:4em;
+}
+
+
+/*********************************************
+ * Images
+ *********************************************/
+
+.reveal .float_img{
+    float: right;
+    margin:10px;
+    max-height: 500px;
+    max-width: 100%;
+}
+
+.reveal img{
+    margin:10px;
+    max-height: 500px;
+    max-width: 100%;
+}
+
+/*********************************************
+ * Orange list style
+ *********************************************/
+
+
+.reveal .quizz {
+    width: 100%;
+}
+
+.reveal .quizz ol{
+    list-style-type: upper-latin;
+}
+.reveal .quizz li{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 5px;
+    display: inline-block;
+    width: 45%;
+}
+.reveal .quizz li:before {
+    content: "";
+}
+
+.reveal .quizz .vrai {
+    border-width: medium;
+    font-weight: bold;
+    color: green;
+}
+
+.reveal .quizz .faux {
+    color: gray;
+    margin: 5px;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #444;
+  font-family: "Helvetica 55 Roman", Impact, sans-serif;
+  line-height: 0.9em;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  text-shadow: none;
+  text-align: left; }
+
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); 
+  font-weight: 900;
+  font-size: 3em;
+  color: #555; }
+
+.reveal h2{
+    font-size: 2em;
+}
+.reveal h3{
+    font-size: 1.2em;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+}
+
+.reveal h4{
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em ;
+}
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #e7ad52;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:not(.image):hover {
+  color: #f3d7ac;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #111;
+  background: #d08a1d; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eeeeee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #e7ad52;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #e7ad52; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #e7ad52; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #e7ad52; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #e7ad52; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #f3d7ac; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #f3d7ac; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #f3d7ac; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #f3d7ac; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #e7ad52;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
