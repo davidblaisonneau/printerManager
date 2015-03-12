@@ -12,32 +12,30 @@ class Relay:
     - GPIO pin"""
     GPIO.setmode(GPIO.BCM)
     
-    def __init__(self, pin, name=""):
+    def __init__(self, pin, name="", default_state=False):
         """Set the relay"""
         self.name = name
         self.pin = pin
-        self.state = self._get_state_()
-        
-    def _get_state_(self):
-        """Get the GPIO state"""
-        GPIO.setup(self.pin, GPIO.IN,pull_up_down = GPIO.PUD_DOWN)
-        return not GPIO.input(self.pin)
-        
-    def _set_state_(self,state):
-        """Setup the GPIO Pin"""
+        self.state = default_state
         GPIO.setup(self.pin, GPIO.OUT)
-        if state.lower() == 'on' or state == True:
-            GPIO.output(self.pin, GPIO.LOW)
-        elif state.lower() == 'off' or state == False:
-            GPIO.output(self.pin, GPIO.HIGH)
-        else:
-            print("Error, '{}' is not a good state".format(state))
-
+        self.on() if self.state else self.off()
+        
+    def on(self):
+        """Setup the GPIO Pin"""
+        print("Set {} to on".format(self.pin))
+        self.state = True
+        GPIO.output(self.pin, GPIO.LOW)
+        
+    def off(self):
+        """Setup the GPIO Pin"""
+        print("Set {} to off".format(self.pin))
+        self.state = False
+        GPIO.output(self.pin, GPIO.HIGH)
+        
     def  __repr__(self):
-        return "relay : {'pin': {}, 'name': {}, 'state': {}}".format(
+        return "relay : ['pin': {}, 'name': {}, 'state': {}]".format(
                 self.pin,
                 self.name,
                 self.state)
 
-    state = property(_get_state_, _set_state_)
 
